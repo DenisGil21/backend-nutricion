@@ -31,8 +31,11 @@ public class Alimento {
 
     private int gramos;
 
+    @Column(name = "grupo_id")
+    private Long grupoId;
+
     @ManyToOne
-    @JoinColumn(name = "grupo_id", nullable = false)
+    @JoinColumn(name = "grupo_id", insertable = false, updatable = false, nullable = false)
     private Grupo grupo;
 
 }

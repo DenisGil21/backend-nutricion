@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -15,7 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "alimentos")
+@Table(name = "grupos")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -27,15 +26,17 @@ public class Grupo {
 
     private String nombre;
 
+    @Column(name = "calorias_porciones")
     private int caloriasPorciones;
 
     private int proteina;
 
     private int grasa;
 
-    private int carbohidrato;
+    private float carbohidrato;
     
-    private int cont_carbo;
+    @Column(name = "cont_carbo")
+    private int contCarbo;
 
     @OneToMany(mappedBy = "grupo")
     private List<Alimento> alimentos;

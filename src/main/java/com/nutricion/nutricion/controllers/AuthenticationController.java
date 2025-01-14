@@ -19,7 +19,7 @@ import com.nutricion.nutricion.services.users.RefreshTokenService;
 
 
 
-@RequestMapping("/api/auth")
+@RequestMapping("/auth")
 @RestController
 public class AuthenticationController {
     

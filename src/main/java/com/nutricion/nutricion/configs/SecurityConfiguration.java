@@ -33,7 +33,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         // .antMatchers("/api/users").authenticated() // Asegura que la ruta /api/users requiere autenticación
                         // .anyRequest().permitAll() // Permite que las demás rutas estén disponibles sin autenticación
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/auth/**").permitAll()
                         .anyRequest().authenticated())
                 .sessionManagement(sessionManagement -> sessionManagement
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))

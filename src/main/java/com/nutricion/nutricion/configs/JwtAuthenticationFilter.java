@@ -46,7 +46,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
 
-        if (request.getServletPath().contains("/api/auth/")) {
+        if (request.getServletPath().contains("/auth/")) {
             filterChain.doFilter(request, response);
             return;
         }
